@@ -151,7 +151,9 @@ class Classifier {
       inputBuffer.set(this.wordIndex[word], 0, i);
       //console.log(word, this.wordIndex[word], inputBuffer);
     }
+    console.log(inputBuffer);
     const input = inputBuffer.toTensor();
+    console.log(input + input.shape);
     status('Running inference');
     const beginMs = performance.now();
     const predictOut = this.model.predict(input);
